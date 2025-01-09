@@ -5,7 +5,7 @@ const usePopularVideos = (setPopular) => {
      const getPopular =  async () => {
      const data = await fetch(YOUTUBE_API_URL);
      const json = await data.json();
-     console.log(json)
+     console.log(json);
      setPopular(json.items);
     }
 useEffect(() => {

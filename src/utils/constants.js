@@ -75,7 +75,7 @@ export const sections = [
 
 
 
- export const YOUTUBE_API_URL = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=" + process.env.REACT_APP_POPULAR_KEY;
+ export const YOUTUBE_API_URL = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=AU&maxResults=50&key=" + process.env.REACT_APP_POPULAR_KEY;
 
  export function formatViews(views) {
   if(views > 1_000_000)
@@ -87,6 +87,7 @@ export const sections = [
   return `${views} views`;
  };
 
+ export const SearchSuggestion_API_URL = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 
  

@@ -7,8 +7,8 @@ const Sidebar = () => {
     
   return (
    isMenuOpen && (
-    <div className='px-4 py-2 w-[215px] mt-4 fixed top-12 left-0 overflow-y-auto h-[calc(100vh-2.5rem)]
-    shrink-0 group'>
+    <div className='overscroll-contain px-4 py-2 w-[215px] mt-4 fixed top-12 left-0 overflow-y-auto h-[calc(100vh-2.5rem)]
+    shrink-0 group z-10'>
         {
        sections.map((section, index) => (
        <div key={index}>
@@ -42,8 +42,8 @@ const Sidebar = () => {
         </style>
     </div>
    )   
-   )     
-}
+   );  
+};
             
 
 export default Sidebar;
