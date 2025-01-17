@@ -5,14 +5,14 @@ import { toggleMenu } from '../utils/appSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import useSearchSuggestion from '../hooks/useSearchSuggestion';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const Header = () => {
     const [query, setQuery] = useState("");
     const [blur, setBlur] = useState(false);
     const dispatch = useDispatch();
     const suggestions = useSearchSuggestion(query);
-    console.log(suggestions, "suggest");
+  //  console.log(suggestions, "suggestions");
     const handleMenu = () => {
      dispatch(toggleMenu());
     }
@@ -37,10 +37,10 @@ const Header = () => {
             </div>
 
           <div className='cursor-pointer shrink-0'>
-          <a href="/">
+          <Link to="/">
           <img src={ytLogo} alt="" 
           className="w-24 sm:w-28 mt-1"/>
-                </a>
+                </Link>
             </div>
 
             <div className="mx-72 mt-2 flex">
@@ -69,7 +69,7 @@ const Header = () => {
   </button>
 </div>
 
-<FontAwesomeIcon icon={faUser} className='text-2xl mt-4 bg-red-500 p-2 rounded-full cursor-pointer ml-32'/>
+<FontAwesomeIcon icon={faUser} className='text-2xl mt-4 bg-red-500 p-2 rounded-full cursor-pointer relative right-6'/>
 
 { !blur && <div className={`text-black bg-white absolute top-[59px] left-[460px] z-50 rounded-md w-[410px] px-3 space-y-2 shadow-sm shadow-black`}>
   {

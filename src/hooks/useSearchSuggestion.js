@@ -24,7 +24,7 @@ const useSearchSuggestion = (query) => {
     try{
     const data = await fetch(SearchSuggestion_API_URL + query);
     const json = await data.json();
-    console.log(json[1]);
+    // console.log(json[1]);
     setSuggestions(json[1]);
     dispatch(cachedResults({[query] : json[1]}))
     } catch (error) {

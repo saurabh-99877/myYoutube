@@ -2,23 +2,29 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // Import Outlet
 import WatchPage from "./Components/WatchPage";
 import MainContainer from "./Components/MainContainer";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Body />,
+    element: (
+      <div>
+        {/* Render Header and Body at the parent level */}
+        <Header />
+        <Body />
+      </div>
+    ),
     children: [
-     {
-      path: "/",
-      element: <MainContainer />,
-     },
-     {
-      path: "watch",
-      element: <WatchPage />
-     }
+      {
+        path: "/",
+        element: <MainContainer />,
+      },
+      {
+        path: "watch",
+        element: <WatchPage />,
+      },
     ],
   },
 ]);
@@ -26,10 +32,7 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <Provider store={appStore}>
-    <div className="">
-      <Header />
       <RouterProvider router={appRouter} />
-    </div>
     </Provider>
   );
 }

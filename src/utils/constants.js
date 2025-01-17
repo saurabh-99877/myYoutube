@@ -75,22 +75,31 @@ export const sections = [
 
 
 
- export const YOUTUBE_API_URL = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=AU&maxResults=50&key=" + process.env.REACT_APP_POPULAR_KEY;
+ export const YOUTUBE_API_URL = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=AU&maxResults=50&key=" + process.env.REACT_APP_KEY;
 
- export function formatViews(views) {
-  if(views > 1_000_000)
-    return `${(views / 1_000_000).toFixed(1)}M views`;
-  else if(views >= 1_000) {
-    return `${(views / 1_000).toFixed(1)}k views`
+ export function formatData(data) {
+  if(data > 1_000_000)
+    return `${(data / 1_000_000).toFixed(1)}M `;
+  else if(data >= 1_000) {
+    return `${(data / 1_000).toFixed(1)}k`
   }
   else
-  return `${views} views`;
+  return `${data}`;
+ };
+
+ export const formatLikes = (Likes) => {
+  if(Likes > 1_000_000)
+    return `${(Likes / 1_000_000).toFixed(1)}M`;
+  else if(Likes >= 1_000) {
+    return `${(Likes / 1_000).toFixed(1)}k`
+  }
+  else
+  return `${Likes}`;
  };
 
  export const SearchSuggestion_API_URL = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
+export const getCommentsUrl = (params) =>  `https://www.googleapis.com/youtube/v3/commentThreads?key=${process.env.REACT_APP_KEY}&textFormat=plainText&part=snippet&videoId=${params}&maxResults=100`;
 
- 
+export const ChannelInfo_URl = (id) =>`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${process.env.REACT_APP_KEY}`;
 
-
- 

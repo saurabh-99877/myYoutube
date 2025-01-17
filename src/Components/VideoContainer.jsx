@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux';
 const VideoContainer = () => {
   const [popular, setPopular] = useState([]);
   usePopularVideos(setPopular);
-  console.log(popular, 'popular');
+  // console.log(popular, 'popular');
   const isMenu = useSelector((store) => store.app.isMenuOpen);
   
   return (

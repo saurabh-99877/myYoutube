@@ -1,5 +1,5 @@
 import React from 'react'
-import { formatViews } from '../utils/constants'
+import { formatData } from '../utils/constants'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { Link } from 'react-router-dom';
 const videoCard = ({popular}) => {
@@ -9,11 +9,11 @@ const videoCard = ({popular}) => {
              <Link to={"/watch?v="+ item.id}>
               <div key={item.id} className=''>
                 <img src={item.snippet.thumbnails.medium.url} alt="" className='rounded-md'/>
-                <p className='text-xs text-[]'>{item.snippet.title}</p>
-                <p className='text-xs text-[]'>{item.snippet.channelTitle}</p>
+                <p className='text-xs'>{item.snippet.title}</p>
+                <p className='text-xs'>{item.snippet.channelTitle}</p>
                 <div className='text-xs'>
-                <span>{formatViews(item.statistics.viewCount)}</span>
-                <span>{formatDistanceToNow(new Date(item.snippet.publishedAt))}</span>
+                <span>{formatData(item.statistics.viewCount)} views</span>
+                <span className='ml-1'>{formatDistanceToNow(new Date(item.snippet.publishedAt))}</span>
                 </div>
             </div>
             </Link>
