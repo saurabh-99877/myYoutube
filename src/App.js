@@ -2,7 +2,7 @@ import Header from "./Components/Header";
 import Body from "./Components/Body";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // Import Outlet
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WatchPage from "./Components/WatchPage";
 import MainContainer from "./Components/MainContainer";
 
