@@ -1,16 +1,25 @@
 import React from "react";
 import { sections } from "../utils/constants";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { closeMenu } from "../utils/appSlice";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  const dispatch = useDispatch();
+  const handleClose = () => {
+   dispatch(closeMenu());
+  };
 
   return (
     isMenuOpen && (
       <div
-        className="overscroll-contain px-4 py-2 w-[215px] mt-4 fixed top-12 left-0 overflow-y-auto h-[calc(100vh-2.5rem)]
-    shrink-0 group z-10"
+        className="bg-white z-30 overscroll-contain px-4 pb-16 sm:py-2  w-full border-2 border-black sm:w-[215px] mt-4 fixed top-28 sm:top-12 left-0 overflow-y-auto h-[calc(100vh-2.5rem)]
+    shrink-0 group"
       >
+        <span className="sm:hidden fixed top-36 right-10 bg-red-600 rounded-full h-8 w-8  px-2 py-1 cursor-pointer text-xl"
+        onClick = {handleClose}>
+          X
+        </span>
         {sections.map((section, index) => (
           <div key={index}>
             <h1 className="font-bold text-lg my-1">{section.title}</h1>
@@ -27,7 +36,7 @@ const Sidebar = () => {
                   scrollbar-width: thin;
             }
                .group {
-                   scrollbar-width: none; 
+                   scrollbar-width: non; 
                }
                .group::-webkit-scrollbar {
                    width: 0;
@@ -43,3 +52,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+// border-2 border-black

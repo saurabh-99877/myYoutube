@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import useSearchSuggestion from "../hooks/useSearchSuggestion";
 import { Link } from "react-router";
-
+import MobileHeader from "./SearchBar";
 const Header = () => {
   const [query, setQuery] = useState("");
   const [blur, setBlur] = useState(false);
@@ -30,23 +30,27 @@ const Header = () => {
   };
 
   return (
-    <div className="px-5 flex items-center fixed top-0  bg-[#ffffff] z-20 pb-2">
+    <div className="px-5 flex items-center  fixed top-0  bg-[#ffffff] z-20 w-full  pb-6">
       <div className=" mr-5">
         <span className="text-xl cursor-pointer" onClick={handleMenu}>
           ☰
         </span>
       </div>
 
-      <div className="cursor-pointer shrink-0">
+      <div className="cursor-pointer shrink-0 mt-1">
         <Link to="/">
-          <img src={ytLogo} alt="" className="w-24  mt-1" />
+          <img
+            src="https://th.bing.com/th/id/OIP.Jl_Z-ZVmTIIi4kL_tN3Z7AHaHx?w=157&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7"
+            alt=""
+            className="w-10 h-10 rounded-full object-cover"
+          />
         </Link>
       </div>
 
-      <div className="mx-72 mt-2 flex shrink-0">
+      <div className="pb-3 bg-white absolute top-16 sm:top-0 sm:mx-36 md:mx-44 lg:mx-96 mt-2 flex shrink-0 w-[90%] sm:w-[60%] md:w-[]  mx-auto">
         <input
           type="text"
-          className="w-[410px] rounded-l-xl border-2 border-[#d3d3d3] px-3 py-2 outline-none transition-all focus:border-blue-500"
+          className="w-full sm:w-[] md:w- lg:w-[500px]  rounded-l-xl border-2 border-[#d3d3d3] px-3 py-2 outline-none transition-all focus:border-blue-500"
           placeholder="Search"
           value={query}
           onChange={handleChange}
@@ -71,7 +75,7 @@ const Header = () => {
 
       <FontAwesomeIcon
         icon={faUser}
-        className="text-2xl mt-4 bg-red-500 p-2 rounded-full cursor-pointer relative right-6"
+        className="ml-auto mr-2 text-2xl mt-2 bg-red-500 p-2 rounded-full cursor-pointer "
       />
 
       {!blur && (
@@ -100,6 +104,7 @@ const Header = () => {
         </div>
       )}
     </div>
+    // <MobileHeader />
   );
 };
 

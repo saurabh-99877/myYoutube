@@ -3,7 +3,7 @@ import { btnList } from "../utils/constants";
 
 const ButtonList = () => {
   return (
-    <div className="flex gap-4 overflow-x-auto fixed w-screen top-16 z-10 bg-[#ffffff] px-8">
+    <div className="flex gap-4 overflow-x-auto fixed w-screen top-32 sm:top-14 z-10 bg-[#ffffff] sm:p-4 ">
       {btnList.map((btn, id) => (
         <button
           key={id}
