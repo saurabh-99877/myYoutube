@@ -7,19 +7,23 @@ const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const dispatch = useDispatch();
   const handleClose = () => {
-   dispatch(closeMenu());
+    dispatch(closeMenu());
   };
 
   return (
     isMenuOpen && (
       <div
-        className="bg-white z-30 overscroll-contain px-4 pb-16 sm:py-2  w-full border-2 border-black sm:w-[215px] mt-4 fixed top-28 sm:top-12 left-0 overflow-y-auto h-[calc(100vh-2.5rem)]
-    shrink-0 group"
+        className="bg-white z-30 overscroll-contain px-4 pb-16 sm:py-2 w-full  sm:w-[215px] mt-4 fixed top-28 sm:top-12 left-0 overflow-y-auto h-[calc(100vh-2.5rem)]
+    shrink-0 group transition-all duration-500 ease-in-out"
       >
-        <span className="sm:hidden fixed top-36 right-10 bg-red-600 rounded-full h-8 w-8  px-2 py-1 cursor-pointer text-xl"
-        onClick = {handleClose}>
-          X
-        </span>
+        <span
+  className="sm:hidden fixed top-36 right-10 bg-red-600 rounded-full h-8 w-8 px-2 py-1 cursor-pointer text-xl"
+  onClick={handleClose}
+  tabIndex="-1"
+  style={{ fontSize: "16px" }} // Ensure no zooming
+>
+  X
+</span>
         {sections.map((section, index) => (
           <div key={index}>
             <h1 className="font-bold text-lg my-1">{section.title}</h1>

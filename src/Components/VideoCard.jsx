@@ -8,9 +8,9 @@ const videoCard = ({ popular }) => {
       <Link to={"/watch?v=" + item.id}>
         <div key={item.id} className="">
           <img
-            src={item.snippet.thumbnails.medium.url}
+            src={item.snippet.thumbnails.high.url}
             alt=""
-            className="rounded-md"
+            className="rounded-md  object-cover w-full"
           />
           <p className="text-xs">{item.snippet.title}</p>
           <p className="text-xs">{item.snippet.channelTitle}</p>

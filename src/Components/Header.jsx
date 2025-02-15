@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <div className="px-5 flex items-center  fixed top-0  bg-[#ffffff] z-20 w-full  pb-6">
+    <div className="px-2 sm:px-5 flex items-center  fixed top-0  bg-[#ffffff] z-20 w-full  pb-6">
       <div className=" mr-5">
         <span className="text-xl cursor-pointer" onClick={handleMenu}>
           ☰
@@ -47,10 +47,10 @@ const Header = () => {
         </Link>
       </div>
 
-      <div className="pb-3 bg-white absolute top-16 sm:top-0 sm:mx-36 md:mx-44 lg:mx-96 mt-2 flex shrink-0 w-[90%] sm:w-[60%] md:w-[]  mx-auto">
+      <div className="pb-3 pr-4 bg-white absolute top-16 sm:top-0 mx-auto sm:mx-36 md:mx-44 lg:mx-96 mt-2 flex shrink-0 w-full sm:w-[60%]">
         <input
           type="text"
-          className="w-full sm:w-[] md:w- lg:w-[500px]  rounded-l-xl border-2 border-[#d3d3d3] px-3 py-2 outline-none transition-all focus:border-blue-500"
+          className="sm:w-[] md:w- lg:w-[500px] rounded-l-xl border-2 border-[#d3d3d3] px-3 py-2 outline-none transition-all focus:border-blue-500 w-screen bg-white"
           placeholder="Search"
           value={query}
           onChange={handleChange}
