@@ -21,15 +21,13 @@ const WatchPage = () => {
 
   return (
     <div
-      className={`absolute top-[65px] ${isMenu ? "ml-[215px]" : "mx-5"} px-3`}
+      className={`absolute top-0 sm:top-[15%] ${isMenu ? "sm:ml-[215px]" : "mx-"} sm:px-2 overflow-hidden`}
     >
-      <div className="grid grid-cols-3 gap-24">
-        <div className="col-span-2 h-[420px]">
+      <div className="">
+        <div className="fixed">
           <iframe
-            width="850"
-            height="420"
             src={`https://www.youtube.com/embed/${params}?si=deWvD9z_vzgEQRVj`}
-            className="rounded-md"
+            className="sm:rounded-md w-screen sm:pr-4 h-[200px] md:w-[800px] sm:h-[400px]"
             title="YouTube video player"
             style={{ border: 0 }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -39,11 +37,11 @@ const WatchPage = () => {
         </div>
         <LiveChat />
       </div>
-      <ChannelInfo /> 
-      
+      {/* <ChannelInfo /> */}
+
       <div className="py-2 my-5 relative -top-16">
-        <h1 className="text-xl font-semibold my-4">Comments</h1>
-        <Comments comment={comments} />
+        {/* <h1 className="text-xl font-semibold my-4">Comments</h1> */}
+        {/* <Comments comment={comments} /> */}
       </div>
     </div>
   );

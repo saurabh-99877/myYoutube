@@ -1,4 +1,4 @@
-import { ytLogo } from "../utils/constants";
+// import { ytLogo } from "../utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { toggleMenu } from "../utils/appSlice";
@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import useSearchSuggestion from "../hooks/useSearchSuggestion";
 import { Link } from "react-router";
-import MobileHeader from "./SearchBar";
+
 const Header = () => {
   const [query, setQuery] = useState("");
   const [blur, setBlur] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <div className="px-2 sm:px-5 flex items-center  fixed top-0  bg-[#ffffff] z-20 w-full  pb-6">
-      <div className=" mr-5">
+      <div className="mr-5">
         <span className="text-xl cursor-pointer" onClick={handleMenu}>
           ☰
         </span>

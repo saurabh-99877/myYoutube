@@ -14,7 +14,7 @@ const VideoContainer = () => {
     <div
       className={`absolute sm:top-40 top-48 grid sm:grid-cols-2 md:grid-cols-3  ${
         isMenu ? "lg:grid-cols-4" : "lg:grid-cols-5"
-      } gap-x-2 gap-y-4 px-4  w-full justify-items-center`}
+      } gap-x-2 gap-y-4 px-4  justify-items-center sm:justify-items-start`}
     >
       <VideoCard popular={popular} />
     </div>

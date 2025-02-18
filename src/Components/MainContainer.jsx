@@ -9,11 +9,7 @@ const MainContainer = () => {
   const isMenu = useSelector((store) => store.app.isMenuOpen);
 
   return (
-    <div
-      className={`border-3  border-green-500 ${
-        isMenu ? "ml-[215px]" : "" 
-      } ] `}
-    >
+    <div className={`${isMenu ? "sm:ml-[215px]" : "ml-0"} ] `}>
       <ButtonList />
       <VideoContainer />
     </div>

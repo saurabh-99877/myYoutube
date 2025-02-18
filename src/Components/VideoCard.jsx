@@ -10,7 +10,7 @@ const videoCard = ({ popular }) => {
           <img
             src={item.snippet.thumbnails.high.url}
             alt=""
-            className="rounded-md  object-cover w-full"
+            className="rounded-md object-cover"
           />
           <p className="text-xs">{item.snippet.title}</p>
           <p className="text-xs">{item.snippet.channelTitle}</p>

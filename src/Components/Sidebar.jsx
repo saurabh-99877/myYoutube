@@ -19,8 +19,6 @@ const Sidebar = () => {
         <span
   className="sm:hidden fixed top-36 right-10 bg-red-600 rounded-full h-8 w-8 px-2 py-1 cursor-pointer text-xl"
   onClick={handleClose}
-  tabIndex="-1"
-  style={{ fontSize: "16px" }} // Ensure no zooming
 >
   X
 </span>
